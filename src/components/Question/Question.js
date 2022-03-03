@@ -1,8 +1,14 @@
+import Button from '../Button/Button'
 
-const Question = () => {
+const Question = (props) => {
+  const { allAnswers, correctAnswer, question } = props.question 
+
+  console.log('allAnswers', allAnswers)
+  console.log('correctAnswer', correctAnswer)
+  console.log('question', question)
   return (
     <div>
-      <h1>This is the QUESTION component</h1>
+      <h2>{question}</h2>
     </div>
   )
 }

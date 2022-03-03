@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Question from '../Question/Question'
+import { decode } from 'html-entities'
 
 const Questions = () => {
 
@@ -25,7 +26,7 @@ const Questions = () => {
   const cleanData = (data) => {
     const result = data.map(question => {
       return {
-        question: question.question,
+        question: decode(question.question),
         correctAnswer: question.correct_answer,
         allAnswers: shuffleArray([...question.incorrect_answers, question.correct_answer])
       }
