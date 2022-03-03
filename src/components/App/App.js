@@ -6,7 +6,7 @@ import Questions from '../Questions/Questions'
 function App() {
   return (
         <Routes>
-          <Route path='/' element={<HomePage />} />
+          <Route path='/' index element={<HomePage />} />
           <Route path='questions' element={<Questions />} />
           <Route path='*' element={<div>An error occurred.</div>} />
         </Routes>
