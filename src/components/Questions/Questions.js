@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Question from '../Question/Question'
 
 const Questions = () => {
 
@@ -6,13 +7,15 @@ const Questions = () => {
   const [error, setError] = useState('')
 
   const questionsAPI ='https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=multiple'
+  const allQuestions = questions.map(question => {
+  return <Question question={question} key={question.question}/>
+})
 
-  useEffect(()=> {
+  useEffect(() => {
     return fetch(questionsAPI)
     .then(response => response.json())
     .then(data => setQuestions(cleanData(data.results)))
     .catch(err => setError(err))
-    
   }, [])
 
   const shuffleArray = (arr) => {
@@ -30,9 +33,11 @@ const Questions = () => {
     return result
   }
 
+
   return (
     <div>
       {error && <h1>An error occurred</h1>}
+      {allQuestions}
     </div>
   )
 }
