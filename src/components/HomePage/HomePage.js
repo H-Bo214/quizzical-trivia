@@ -1,13 +1,23 @@
-// render a Button component
+
 // pass a function to call the API for the questions to the onClick property of the button.
 // Once we receive the response from the API, store these values in state by using useState()
-import Button from '../Button/Button'
 import { Link } from 'react-router-dom'
-const HomePage = () => {
+import Button from '../Button/Button'
+import { useState, useEffect } from 'react'
 
-  function handleFetch() {
-    console.log('Button click successful')
-  }
+const HomePage = () => {
+  const [questions, setQuestions] = useState([])
+  const [error, setError] = useState('')
+  const questionsAPI ='https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=multiple'
+
+  useEffect(()=> {
+    return fetch(questionsAPI)
+    .then(response => response.json())
+    .then(data => setQuestions(data.results))
+    .catch(err => setError(err))
+    
+  }, [])
+  console.log('questions', questions)
 
   return (
     <main>
@@ -18,7 +28,6 @@ const HomePage = () => {
         btnText={'Start quiz'}
         bckgrdColor={'#4D5B9E'}
         textColor={'#F5F7FB'}
-        onClick={handleFetch}
       />
     </Link>
     </main>
