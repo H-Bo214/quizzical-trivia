@@ -9,9 +9,7 @@ const HomePage = () => {
     <Link to="/questions">
       <Button 
         btnText={'Start quiz'}
-        bckgrdColor={'#4D5B9E'}
-        textColor={'#F5F7FB'}
-      />
+        />
     </Link>
     </main>
   )
