@@ -8,12 +8,36 @@ export function shuffleArray(arr) {
 
 // Cleans the data by returning only what is necessary for app functionality.
 export function cleanData(data) {
+  // console.log('data in helper', data)
     return data.map(question => {
+      
       return {
-        id: nanoid(),
+        questionId: nanoid(),
         question: decode(question.question),
         correctAnswer: question.correct_answer,
-        allAnswers: shuffleArray([...question.incorrect_answers, question.correct_answer]),
+        allAnswers: createArrayOfObj(shuffleArray([...question.incorrect_answers, question.correct_answer])),
+        selectedAnswer: '',
       }
     })
 }
+
+  export function createArrayOfObj(arr) {
+  const result = []
+  arr.forEach(answer => {
+    let obj = {}
+    obj.id = nanoid()
+    obj.answer = answer
+    obj.isSelected = false
+    result.push(obj)
+  })
+  return result
+}
+
+// export function cleanAnswers(data) {
+//   return data.map(question => {
+//     return {
+//       allAnswers: createArrayOfObj(shuffleArray([...question.incorrect_answers, question.correct_answer]))
+//     }
+//   })
+// }
+

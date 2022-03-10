@@ -11,11 +11,40 @@ const Questions = () => {
       .then(response => response.json())
       .then(data => setQuestions(cleanData(data.results)))
       .catch(err => setError(err))
+
   }, [])
   
-  const handleChoices = (e) => {
-    console.log('value', e.target.value)
+  const findQuestion = (id) => {
+    return questions.find(question => question.questionId === id)
   }
+
+  const findAnswer = (singleQuestion, id) => {
+    return singleQuestion.allAnswers.find(answer => answer.id === id)
+  }
+
+  const handleChoices = (e, id, answerId) => {
+    console.log('event target', e.target)
+    const { value } = e.target
+    let foundQuestion= findQuestion(id)
+    let foundAnswer = findAnswer(foundQuestion, answerId)
+    let index = foundQuestion.allAnswers.indexOf(foundAnswer)
+    let updatedAnswer = {...foundAnswer, isSelected: !foundAnswer.isSelected}
+    foundQuestion.allAnswers.splice(index, 1, updatedAnswer)
+
+    // console.log('foundAnswer.answer', foundAnswer.answer)
+    setQuestions(prevQuestions => {
+      return prevQuestions.map(question => {
+        return question.questionId === id ? 
+        {
+          ...question, 
+          selectedAnswer: updatedAnswer.isSelected ? value : '', 
+          allAnswers: foundQuestion.allAnswers
+        } 
+        : question
+      })
+    })
+  }
+
 
   const allQuestions = questions.map(question => {
     return <Question 
@@ -26,11 +55,6 @@ const Questions = () => {
   })
 
 
-// When I click the button this should set the state for that  button as a selected answer
-
-  // will need to think about setting state in Questions, When the user selects an answer X in state is updated.
-  // will need to think about a function that validates if the correct answer was selected. Pass this function down to Question as a prop
-  // this function check will be triggered when clicking the Check Answers button via a function  
   return (
     <div>
       {error && <h1>An error occurred</h1>}

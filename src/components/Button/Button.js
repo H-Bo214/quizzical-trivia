@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types'
 
-const Button = ({ btnText, btnClassName, onClick, name, value, id }) => {
 
-  const styles = {backgroundColor: '#fff'}
+const Button = ({ btnText, btnClassName, onClick, name, value, btnId, selected }) => {
+
+
+  const styles ={background: selected ? 'red' : 'white' }
 
   return (
     <button
@@ -11,7 +13,7 @@ const Button = ({ btnText, btnClassName, onClick, name, value, id }) => {
       onClick={onClick}
       name={name}
       value={value}
-      id={id}
+      id={btnId}
     >
       {btnText}
     </button>
@@ -19,11 +21,14 @@ const Button = ({ btnText, btnClassName, onClick, name, value, id }) => {
 }
 
 Button.propTypes = {
-  bckgrdColor: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
   textColor: PropTypes.string,
+  btnId: PropTypes.string,
   btnText: PropTypes.string,
   btnClassName: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  selected: PropTypes.bool
 }
 
 export default Button

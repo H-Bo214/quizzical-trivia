@@ -1,32 +1,27 @@
 import Button from '../Button/Button'
-// import { useState } from 'react'
-
 
 const Question = (props) => {
+  const { handleChoices } = props
+  const { allAnswers, question, questionId } = props.question 
 
-
-  const { allAnswers, question} = props.question 
-  const { handleChoices, on} = props
-
-  const allButtons = allAnswers.map(choice => <Button 
-    btnText={choice} 
-    name={choice}
-    key={choice}
-    onClick={(e) => handleChoices(e)}
-    value={choice}
-    id={choice}
-  />)
-
+  const answers = allAnswers.map(answer => {
+    return <Button 
+    btnText={answer.answer}
+    key={answer.answer}
+    onClick={(e) => handleChoices (e, questionId, answer.id)}
+    name={answer.answer}
+    value={answer.answer}
+    btnId={answer.id}
+    selected={answer.isSelected}
+    />
+  })
+  
   return (
     <div>
       <h2>{question}</h2>
-      {allButtons}
+      {answers}
     </div>
   )
 }
 
 export default Question
-
-// when I click the answer of my choice,
-// if the event.target.value matches the id of the button I clicked
-// make this this selected value
