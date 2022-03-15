@@ -1,25 +1,27 @@
-import Button from '../Button/Button'
+import Input from '../Input/Input'
+import './Question.css'
 
 const Question = (props) => {
   const { handleChoices } = props
-  const { allAnswers, question, questionId } = props.question 
+  const { allAnswers, question, questionId, selectedAnswer } = props.question 
 
   const answers = allAnswers.map(answer => {
-    return <Button 
-    btnText={answer.answer}
+    return <Input 
+    choiceText={answer.answer}
     key={answer.answer}
-    onClick={(e) => handleChoices (e, questionId, answer.id)}
-    name={answer.answer}
+    onChange={(e) => handleChoices (e, questionId)}
+    name={selectedAnswer}
     value={answer.answer}
-    btnId={answer.id}
-    selected={answer.isSelected}
+    id={answer.id}
     />
   })
   
   return (
     <div>
       <h2>{question}</h2>
-      {answers}
+      <section className='answers-container'>
+        {answers}
+      </section>
     </div>
   )
 }

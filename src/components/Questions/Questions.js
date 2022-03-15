@@ -13,36 +13,17 @@ const Questions = () => {
       .catch(err => setError(err))
 
   }, [])
-  
-  const findQuestion = (id) => {
-    return questions.find(question => question.questionId === id)
-  }
 
-  const findAnswer = (singleQuestion, id) => {
-    return singleQuestion.allAnswers.find(answer => answer.id === id)
-  }
-
-  const handleChoices = (e, id, answerId) => {
-    console.log('event target', e.target)
+  const handleChoices = (e, id) => {
     const { value } = e.target
-    let foundQuestion= findQuestion(id)
-    let foundAnswer = findAnswer(foundQuestion, answerId)
-    let index = foundQuestion.allAnswers.indexOf(foundAnswer)
-    let updatedAnswer = {...foundAnswer, isSelected: !foundAnswer.isSelected}
-    foundQuestion.allAnswers.splice(index, 1, updatedAnswer)
 
-    // console.log('foundAnswer.answer', foundAnswer.answer)
     setQuestions(prevQuestions => {
       return prevQuestions.map(question => {
         return question.questionId === id ? 
-        {
-          ...question, 
-          selectedAnswer: updatedAnswer.isSelected ? value : '', 
-          allAnswers: foundQuestion.allAnswers
-        } 
-        : question
+        {...question, selectedAnswer: value} :
+        question
       })
-    })
+    }) 
   }
 
 
@@ -56,10 +37,10 @@ const Questions = () => {
 
 
   return (
-    <div>
+    <form>
       {error && <h1>An error occurred</h1>}
       {allQuestions}
-    </div>
+    </form>
   )
 }
 
