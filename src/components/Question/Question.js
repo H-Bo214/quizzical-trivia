@@ -1,8 +1,27 @@
+import Input from '../Input/Input'
+import './Question.css'
 
-const Question = () => {
+const Question = (props) => {
+  const { handleChoices } = props
+  const { allAnswers, question, questionId, selectedAnswer } = props.question 
+
+  const answers = allAnswers.map(answer => {
+    return <Input 
+    choiceText={answer.answer}
+    key={answer.answer}
+    onChange={(e) => handleChoices (e, questionId)}
+    name={selectedAnswer}
+    value={answer.answer}
+    id={answer.id}
+    />
+  })
+  
   return (
     <div>
-      <h1>This is the QUESTION component</h1>
+      <h2>{question}</h2>
+      <section className='answers-container'>
+        {answers}
+      </section>
     </div>
   )
 }
