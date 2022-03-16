@@ -9,13 +9,13 @@ const Question = (props) => {
     return <Input 
     choiceText={answer.answer}
     key={answer.answer}
-    onChange={(e) => handleChoices (e, questionId)}
+    onChange={(e) => handleChoices (e, questionId, answer.id)}
     name={selectedAnswer}
     value={answer.answer}
     id={answer.id}
     />
   })
-  
+
   return (
     <div>
       <h2>{question}</h2>

@@ -27,6 +27,7 @@ export function cleanData(data) {
     let obj = {}
     obj.id = nanoid()
     obj.answer = answer
+    /// may need to remove isSelected key/value pair//
     obj.isSelected = false
     result.push(obj)
   })
