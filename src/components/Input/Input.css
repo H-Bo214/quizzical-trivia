@@ -17,3 +17,7 @@
 .radio-input:checked + .radio-label {
   background-color: #D6DBF5;
 } 
+
+.radio-input:hover + .radio-label{
+  background-color: #D6DBF5;
+}

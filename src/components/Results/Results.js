@@ -1,36 +1,44 @@
 import './Results.css'
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 
-const Results = (props) => {
+const Results = () => {
   const location = useLocation()
   const { state } = location
-  console.log('state', state)
 
-
+  let count = 0
   const finalQuestions = state.map(singleQuestion => {
     const {question, selectedAnswer, correctAnswer } = singleQuestion
-      const correctSelected = selectedAnswer === correctAnswer
-      const incorrectSelected = selectedAnswer !== correctAnswer
+    const correctSelected = selectedAnswer === correctAnswer
+    const incorrectSelected = selectedAnswer !== correctAnswer
 
     const answers = singleQuestion.allAnswers.map(answer => {
-      const bothCorrect = `radio-label-final ${correctSelected && answer.isSelected ? 'correct-answer' : ''}`
-      const notSelected = `radio-label-final ${incorrectSelected && answer.isSelected ? 'incorrect-answer' : ''}`
-      return <p 
+      const bothCorrect = `radio-label-final ${correctSelected && answer.isSelected && 'correct-answer' }`
+      const notSelected = `radio-label-final ${incorrectSelected && answer.isSelected && 'incorrect-answer'}`
+    return <p 
       className={correctSelected ? bothCorrect : notSelected} 
-      key={answer.answer}>{answer.answer}
-      </p>
-    })
-    
+      key={answer.answer}
+    >
+      {answer.answer}
+    </p>
+  })
+  correctSelected && count++
     return <div key={question}>
       <h2>{question}</h2>
       <section>{answers}</section>
     </div>
   })
-  
   return (
-    <div>
-      {finalQuestions}
-    </div>
+    <main>
+      <div>
+        {finalQuestions}
+      </div>
+      <section className="final-results-container">
+        <p>{`You scored ${count}/5 correct answers`}</p>
+        <Link to="/questions">
+          <button type="button">Play again</button>
+        </Link>
+      </section>
+    </main>
   )
 }
 
