@@ -1,28 +1,42 @@
-import Input from '../Input/Input'
 import './Question.css'
+import { nanoid } from 'nanoid'
+import { decode } from 'html-entities'
 
 const Question = (props) => {
-  const { handleChoices } = props
+  const { handleChoices, setSelectionError } = props
   const { allAnswers, question, questionId, selectedAnswer } = props.question 
 
+
   const answers = allAnswers.map(answer => {
-    return <Input 
-    choiceText={answer.answer}
-    key={answer.answer}
-    onChange={(e) => handleChoices (e, questionId)}
-    name={selectedAnswer}
-    value={answer.answer}
-    id={answer.id}
-    />
+    const sharedId = nanoid()
+    const isSelected = selectedAnswer === answer
+    return <div className='single-answer-container' key={answer}>
+      <input 
+        className={'radio-input'}
+        type='radio'
+        onChange={(e) => handleChoices(e, questionId)}
+        name={'selectedAnswer'}
+        value={answer}
+        id={sharedId}
+        checked={isSelected}
+      />
+      <label
+        className={`radio-label ${isSelected ? 'clicked-radio-label' : ''}`}
+        htmlFor={sharedId}
+        onClick={() => setSelectionError('')}
+      >
+        {decode(answer)}
+      </label>
+    </div>
   })
-  
+
   return (
-    <div>
-      <h2>{question}</h2>
+    <section className='question-answer-container'>
+      <h2 className='question'>{decode(question)}</h2>
       <section className='answers-container'>
         {answers}
       </section>
-    </div>
+    </section>
   )
 }
 

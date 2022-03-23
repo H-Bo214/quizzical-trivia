@@ -1,3 +1,45 @@
-.answers-container {
+.question-answer-container, 
+.results-question-answer-container {
+  border-bottom: 1.5px solid #DBDEF0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 80%;
+}
+
+.question, 
+.results-question {
+  font-size: 1rem;
+  margin-bottom: 0.7rem
+}
+
+.answers-container, 
+.single-answer-container {
   display: flex;
+  margin-bottom: .8rem;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-label {
+  background: #F5F7FB;
+  border-radius: 8px;
+  color: #293264;
+  padding: 2px 12px;
+  cursor: pointer;   
+  border: 1px solid #293264;
+  margin-right: 2rem;
+  transition: background 0.1s;
+  font-family: 'Inter', sans-serif;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.radio-input:hover + .radio-label{
+  background-color: #D6DBF5;
+}
+
+.clicked-radio-label {
+  background-color: #D6DBF5;
 }

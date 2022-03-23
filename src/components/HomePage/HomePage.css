@@ -1,0 +1,19 @@
+.title {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.description {
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 1.8rem;
+}
+
+.start-btn {
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+  cursor: pointer;
+}
