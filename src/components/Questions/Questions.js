@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import Question from '../Question/Question'
 import { cleanData  } from '../../helpers'
 import { useNavigate } from 'react-router-dom'
+import DotLoader from "react-spinners/DotLoader";
+
 import './Questions.css'
 
 const Questions = () => {
@@ -63,7 +65,9 @@ const Questions = () => {
       <form id='my-form'>
         {error && <h1>An error occurred getting questions.</h1>}
         {selectionError && <h2 className='selection-error'>{selectionError}</h2>}
-        {isLoading ? <h1>Loading...</h1> : allQuestions}
+        {isLoading ? 
+          <DotLoader color={'#6773af'} loading={isLoading}  size={150} /> :
+        allQuestions}
       <div>
         {!isLoading && <button className='check-answers-btn' onClick={checkAnswers}>Check answers</button>}
       </div>
