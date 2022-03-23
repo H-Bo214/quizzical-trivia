@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import HomePage from '../HomePage/HomePage'
-import Question from '../Question/Question';
 import Questions from '../Questions/Questions'
 import Results from '../Results/Results'
 
