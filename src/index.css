@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+/* html {
+  margin: 0 auto;
+} */
+
 body {
   font-family: 'Karla', sans-serif;
   background-color: #c8d5f0;
