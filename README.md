@@ -10,14 +10,14 @@
  	<!-- Add your tagline or very short intro of your project -->
    Quizzical is a video game trivia application.
     <br />
-
+<a href="https://quizzical-video-games.netlify.app">Quizical Trivia</a> 
 </p>
 
 <div align="center">
 
 <!-- Use Shields website (link in acknowledgement section) to generate these for your repo or just replace the links here with yours -->
 
-[![Status](https://img.shields.io/badge/Quizzical-Live-blue?style=for-the-badge)]()
+[![Status](https://img.shields.io/badge/Quizzical-Live-blue?style=for-the-badge)](https://quizzical-video-games.netlify.app/)
 
 </div>
 
