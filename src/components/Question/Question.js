@@ -1,11 +1,11 @@
 import './Question.css'
 import { nanoid } from 'nanoid'
 import { decode } from 'html-entities'
+import PropTypes from 'prop-types'
 
 const Question = (props) => {
   const { handleChoices, setSelectionError } = props
   const { allAnswers, question, questionId, selectedAnswer } = props.question 
-
 
   const answers = allAnswers.map(answer => {
     const sharedId = nanoid()
@@ -38,6 +38,15 @@ const Question = (props) => {
       </section>
     </section>
   )
+}
+
+Question.propTypes = {
+  handleChoices: PropTypes.func,
+  setSelectionError: PropTypes.func,
+  allAnswers: PropTypes.array,
+  question: PropTypes.object,
+  questionId: PropTypes.string,
+  selectedAnswer: PropTypes.string
 }
 
 export default Question

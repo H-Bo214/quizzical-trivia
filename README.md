@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Add your project logo if you have any -->
+<img width=200px height=200px src="images/Quizzical-logo.png" alt="Project logo">
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+<h1 align="center">Quizzical Trivia</h1>
 
-### `npm start`
+ <p align="center">
+ 	<!-- Add your tagline or very short intro of your project -->
+   Quizzical is a video game trivia application.
+    <br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    <a href="">View Demo</a>
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<div align="center">
 
-### `npm test`
+<!-- Use Shields website (link in acknowledgement section) to generate these for your repo or just replace the links here with yours -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![Status](https://img.shields.io/badge/Quizzical-Live-blue?style=for-the-badge)]()
 
-### `npm run build`
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr />
+<br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div align="center">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- Add your project demo gif here -->
 
-### `npm run eject`
+![Project Demo Gif](https://media.giphy.com/media/bS69QlrmMOoXGhlFMa/giphy.gif)
+![Project Demo Gif Mobile](https://media.giphy.com/media/QzA9Lo1uYj32iI5lPL/giphy.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+</div>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- You may write notes in your readme this way if you want to, it looks good and also different from other text -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> _**NOTE:** Desktop and mobile demos._
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<hr />
 
-## Learn More
+<p align="center">Quizzical Trivia is a simple multiple choice video game trivia application. </p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🧐About
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Due to personal and family medical issues I unfortunately had to step away from programming for the last year. I dabbled when the opportunity arose but was unable to stay consistent. I'm happy to say that this chapter of my life is now behind me. I decided to complete React.js course I found on Scrimba in order to refresh my React skills. Quizzical is the final solo project from this course. Quizzical utilizes the Open Trivia Database API. I love video games so this category was an obvious choice. 
 
-### Code Splitting
+## 💡Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Excellent Lighthouse scores for performance, accessibility, best practices and SEO
+2. Responsive mobile friendly design
 
-### Analyzing the Bundle Size
+## ⛏️Built with
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- JavaScript
+- React
+- React Router v6
+- CSS
+- Git VCS
+- GitHub Projects
 
-### Making a Progressive Web App
+## 🏁Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Clone down this repo
+- Run `npm install` from the root directory
+- Run `npm start` and visit localhost:3000 in your browser
 
-### Advanced Configuration
+## 🎉Acknowledgement
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Acknowledge all whose code you used, or took inspiration from or mention any websites you used in the development for eg:
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   [Scrimba](https://scrimba.com)
+-   [Open Trivia Database](https://opentdb.com)
+-   [React Spinners](https://www.npmjs.com/package/react-spinners)
+-   [Favicon](https://favicon.io/)
