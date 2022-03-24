@@ -50,6 +50,9 @@ Due to personal and family medical issues I unfortunately had to step away from 
 1. Excellent Lighthouse scores for performance, accessibility, best practices and SEO
 2. Responsive mobile friendly design
 
+![Quizzical-lighthouse](https://user-images.githubusercontent.com/50157153/160014739-f2cb8aaa-fc91-483b-8e59-04171b92aa88.png)
+
+
 ## ⛏️Built with
 
 - JavaScript
@@ -64,6 +67,8 @@ Due to personal and family medical issues I unfortunately had to step away from 
 - Clone down this repo
 - Run `npm install` from the root directory
 - Run `npm start` and visit localhost:3000 in your browser
+- You may also click the links above to go directly to the site
+
 
 ## 🎉Acknowledgement
 
