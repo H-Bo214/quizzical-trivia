@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import Question from '../Question/Question'
 import { cleanData  } from '../../helpers'
 import { useNavigate } from 'react-router-dom'
+import DotLoader from "react-spinners/DotLoader";
+
 import './Questions.css'
 
 const Questions = () => {
@@ -9,11 +11,17 @@ const Questions = () => {
   const [questions, setQuestions] = useState([])
   const [error, setError] = useState('')
   const [selectionError, setSelectionError] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     return fetch('https://opentdb.com/api.php?amount=5&category=15&difficulty=easy&type=multiple')
       .then(response => response.json())
-      .then(data => setQuestions(cleanData(data.results)))
+      .then(data => {
+        if (data) {
+          setIsLoading(false)
+          setQuestions(cleanData(data.results))
+        }
+      })
       .catch(err => setError(err))
   }, [])
 
@@ -31,8 +39,8 @@ const Questions = () => {
 
   const checkAnswers = (e) => {
     e.preventDefault()
-    const result = findSelectedAnswers()
-    if (result.length < 5) {
+    const answers = findSelectedAnswers()
+    if (answers.length < 5) {
       setSelectionError('Please answer all questions.')
     } else  {
       navigate('/results', { state: questions })
@@ -57,9 +65,11 @@ const Questions = () => {
       <form id='my-form'>
         {error && <h1>An error occurred getting questions.</h1>}
         {selectionError && <h2 className='selection-error'>{selectionError}</h2>}
-        {allQuestions}
+        {isLoading ? 
+          <DotLoader color={'#6773af'} loading={isLoading}  size={150} /> :
+        allQuestions}
       <div>
-          <button className='check-answers-btn' onClick={checkAnswers}>Check answers</button>
+        {!isLoading && <button className='check-answers-btn' onClick={checkAnswers}>Check answers</button>}
       </div>
       </form>
     </main>

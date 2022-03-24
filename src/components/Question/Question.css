@@ -29,7 +29,7 @@
   padding: 2px 12px;
   cursor: pointer;   
   border: 1px solid #293264;
-  margin-right: 2rem;
+  margin-right: 1rem;
   transition: background 0.1s;
   font-family: 'Inter', sans-serif;
   font-size: .8rem;
@@ -42,4 +42,38 @@
 
 .clicked-radio-label {
   background-color: #D6DBF5;
+}
+
+@media only screen and (max-width: 750px) {
+  .question, 
+  .results-question {
+    font-size: 1.2rem;
+    margin-bottom: 1rem
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .radio-label {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .question {
+    font-size: 1rem;
+  } 
+
+  .radio-label {
+    font-size: .9rem;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 0.2rem;
+  }
+
+  .answers-container, 
+  .single-answer-container {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
 }
