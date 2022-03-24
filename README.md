@@ -68,8 +68,6 @@ Due to personal and family medical issues I unfortunately had to step away from 
 
 ## 🎉Acknowledgement
 
-Acknowledge all whose code you used, or took inspiration from or mention any websites you used in the development for eg:
-
 -   [Scrimba](https://scrimba.com)
 -   [Open Trivia Database](https://opentdb.com)
 -   [React Spinners](https://www.npmjs.com/package/react-spinners)
