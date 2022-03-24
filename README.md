@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Add your project logo if you have any -->
-<img width=200px height=200px src="images/Quizzical-logo.png" alt="Project logo">
+<img width=200px height=200px src="../images/Quizzical-logo.png" alt="Project logo">
 
 </div>
 
