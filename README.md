@@ -11,7 +11,6 @@
    Quizzical is a video game trivia application.
     <br />
 
-    <a href="">View Demo</a>
 </p>
 
 <div align="center">
