@@ -50,8 +50,7 @@ Due to personal and family medical issues I unfortunately had to step away from 
 1. Excellent Lighthouse scores for performance, accessibility, best practices and SEO
 2. Responsive mobile friendly design
 
-![Quizzical-lighthouse](https://user-images.githubusercontent.com/50157153/160014739-f2cb8aaa-fc91-483b-8e59-04171b92aa88.png)
-
+![Quizzical-LH](https://user-images.githubusercontent.com/50157153/160015143-ea10ec38-3a57-4a1c-8620-f135a9e61f9d.png)
 
 ## ⛏️Built with
 
